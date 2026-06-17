@@ -1,0 +1,15 @@
+{
+  "name": "devflow",
+  "version": "1.0.0",
+  "private": "true",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web \"npm run dev -w api\" \"npm run dev -w web\"",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
